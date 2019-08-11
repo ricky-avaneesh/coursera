@@ -1,9 +1,10 @@
 //*****************************************************************//
 //                       Created by Avaneesh                       //
 //*****************************************************************//
+//           Programme to find the maximum pairwise product        //
+//*****************************************************************//
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 unsigned long long int product_v1(vector<long long int>& num)
 {
@@ -42,10 +43,7 @@ unsigned long long int product_v2(vector<long long int>& num)
 				num[j] -= num[j+1];
 			}
 		}
-	/*cout<<"Sorted Vector ( Partial ) : ";
-	for(int k; k<n; ++k)
-		cout<<num[k]<<"  ";
-	cout<<endl;*/
+
 	product = num[n-1]*num[n-2];
 	return product;
 }
@@ -68,9 +66,10 @@ int main() {
  	for (int i = 0; i < n; ++i)
 	{
 		cin >> numbers[i];
+		//remove the below comment for stress testing
 		//rev_num[n-i-1] = numbers[i];
 	}
-
+	//below function performs the stress test... while submitting add comment
 	//stress_test(numbers, rev_num);
 	cout<<product_v2(numbers)<<"\n";
 return 0;
