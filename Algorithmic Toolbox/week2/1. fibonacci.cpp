@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cassert>
-
+using namespace std;
 // The following code calls a naive algorithm for computing a Fibonacci number.
 //
 // What to do:
@@ -15,16 +15,25 @@
 //    and submit it to the grader.
 
 int fibonacci_naive(int n) {
-    if (n <= 1)
-        return n;
+	if (n <= 1)
+		return n;
 
-    return fibonacci_naive(n - 1) + fibonacci_naive(n - 2);
+	return fibonacci_naive(n - 1) + fibonacci_naive(n - 2);
 }
 
-int fibonacci_fast(int n) {
-    // write your code here
-
-    return 0;
+long long int fibonacci_fast(int n) {
+	// write your code here
+	long long int first = 0;
+	long long int second = 1;
+	long long int f_number,k;
+	for(int i = 0; i<n; ++i)
+	{
+		k = f_number;
+		f_number = first + second;
+		second = first;
+		first = k;
+	}
+	return f_number;
 }
 
 void test_solution() {
@@ -35,11 +44,11 @@ void test_solution() {
 }
 
 int main() {
-    int n = 0;
-    std::cin >> n;
+	int n = 0;
+	cin >> n;
 
-    std::cout << fibonacci_naive(n) << '\n';
-    //test_solution();
-    //std::cout << fibonacci_fast(n) << '\n';
-    return 0;
+	//cout << fibonacci_naive(n) << '\n';
+	//test_solution();
+	cout << fibonacci_fast(n) << '\n';
+	return 0;
 }
