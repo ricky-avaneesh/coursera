@@ -22,16 +22,20 @@ int fibonacci_naive(int n) {
 }
 
 long long int fibonacci_fast(int n) {
+	if(n<=1)
+		return n;
+
 	// write your code here
-	long long int first = 0;
-	long long int second = 1;
-	long long int f_number,k;
-	for(int i = 0; i<n; ++i)
+	long long int pre = 0;
+	long long int f_number = 1;
+	long long int k;
+
+	for(int i = 0; i<n-1; ++i)
 	{
-		k = f_number;
-		f_number = first + second;
-		second = first;
-		first = k;
+		k = pre;
+		pre = f_number;
+		f_number = k + pre;
+
 	}
 	return f_number;
 }
