@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-using std::vector;
+using namespace std;
 
 vector<int> optimal_summands(int n) {
   vector<int> summands;
@@ -11,10 +11,10 @@ vector<int> optimal_summands(int n) {
 
 int main() {
   int n;
-  std::cin >> n;
+  cin >> n;
   vector<int> summands = optimal_summands(n);
-  std::cout << summands.size() << '\n';
+  cout << summands.size() << '\n';
   for (size_t i = 0; i < summands.size(); ++i) {
-    std::cout << summands[i] << ' ';
+    cout << summands[i] << ' ';
   }
 }

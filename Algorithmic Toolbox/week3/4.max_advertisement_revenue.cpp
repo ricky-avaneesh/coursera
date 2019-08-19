@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-using std::vector;
+using namespace std;
 
 long long max_dot_product(vector<int> a, vector<int> b) {
   // write your code here
@@ -15,13 +15,13 @@ long long max_dot_product(vector<int> a, vector<int> b) {
 
 int main() {
   size_t n;
-  std::cin >> n;
+  cin >> n;
   vector<int> a(n), b(n);
   for (size_t i = 0; i < n; i++) {
-    std::cin >> a[i];
+    cin >> a[i];
   }
   for (size_t i = 0; i < n; i++) {
-    std::cin >> b[i];
+    cin >> b[i];
   }
-  std::cout << max_dot_product(a, b) << std::endl;
+  cout << max_dot_product(a, b) << endl;
 }
